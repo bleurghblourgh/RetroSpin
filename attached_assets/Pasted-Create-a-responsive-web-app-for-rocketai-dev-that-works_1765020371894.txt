@@ -1,0 +1,66 @@
+Create a responsive web app for rocketai.dev that works like a personal, offline Spotify for MP3 files. The app should let users drag and drop their own MP3 files into the browser, save them, and then play them back in a slick, retro-styled music player.
+
+Core concept:
+- Local “library” of user-uploaded MP3s
+- No external streaming: only play files the user uploads
+- Free, ad-free, and focused on a smooth listening experience
+
+Key features:
+1. Drag & Drop + Upload
+   - Large, central drag-and-drop area that lets users drop multiple MP3 files at once.
+   - Also include a classic “Browse files” button for manual selection.
+   - Extract and display metadata where possible (track name, artist, album, duration).
+   - Persist the library (e.g. using localStorage / IndexedDB or a simple backend API) so the songs remain available between sessions.
+
+2. Library & Playlists
+   - Display a scrollable song list with columns: Track, Artist, Album, Duration.
+   - Allow basic sorting (by track name, artist, recently added).
+   - Simple playlist support: users can create playlists, add/remove tracks, and rename playlists.
+   - Search bar to filter songs by name or artist.
+
+3. Player Controls
+   - Classic audio controls: play/pause, next, previous, seek bar, volume slider, mute toggle.
+   - Shuffle and repeat buttons.
+   - Show currently playing track info: title, artist, and playlist.
+   - Responsive mini-player that sticks to the bottom of the screen on desktop and mobile.
+
+4. Retro Aesthetic & Animations
+   - Overall vibe: retro / vaporwave / 80s–90s hi-fi stereo.
+   - Use a dark background with neon accent colors (e.g. teal, magenta, electric blue) and subtle gradients.
+   - Main “Now Playing” area should feature a spinning disk (like a vinyl record or CD) that rotates when music is playing and slows/stops when paused.
+   - Disk has a subtle glow and a highlight that makes it feel physical.
+   - Add soft, minimal equalizer-style bars pulsing in sync with the track’s playback (simple animation rather than real audio analysis is fine).
+   - Retro typography: bold headings and slightly pixel/arcade-inspired label text, but still clean and readable.
+   - Hover states and button presses should feel tactile: slight scale-up, glow, or “press-in” effect.
+
+5. Layout
+   - Desktop:
+     - Left sidebar: logo, navigation (Library, Playlists, Settings).
+     - Center/main: drag-and-drop area when empty, otherwise the song list.
+     - Right side or top section: “Now Playing” card with spinning disk and track info.
+     - Persistent bottom player bar.
+   - Mobile:
+     - Top: logo + navigation.
+     - Middle: song list.
+     - Bottom: sticky mini-player; tap to expand a full “Now Playing” view with the spinning disk.
+
+6. Branding & Microcopy
+   - Name the app something retro-inspired like “RetroSpin” (can be changed later).
+   - Include small nostalgic UI details such as:
+     - A fake “stereo” label near the player.
+     - Tiny “REC” dot or “Hi-Fi” text near the spinning disk.
+   - Keep all copy friendly, modern, and simple.
+
+7. Technical Notes
+   - Use modern web technologies (HTML, CSS, JavaScript) with a component-based approach (e.g. React) and responsive layout.
+   - Ensure drag-and-drop and file handling work in modern browsers.
+   - Store library data so that refreshing the page does not delete the user’s uploaded list.
+   - Smooth animations and transitions, but avoid anything too heavy that could hurt performance.
+
+8. Accessibility & UX
+   - Keyboard-accessible controls for playback (space to play/pause, arrow keys to seek, etc., if feasible).
+   - Clear focus states and sufficient contrast for text.
+   - Tooltips or small labels on icons for clarity (e.g. shuffle, repeat, playlist).
+
+Goal:
+A polished, production-ready retro music web app for rocketai.dev that lets users drag and drop MP3s, save them to a persistent library, and enjoy them with a nostalgic spinning disk visual and clean, modern UX.
