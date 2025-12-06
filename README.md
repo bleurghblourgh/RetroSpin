@@ -1,85 +1,48 @@
-# RetroSpin
-Running RetroSpin Locally
+## Running RetroSpin Locally
 
-RetroSpin is currently a local development web app. To run it on your PC, follow these steps:
+RetroSpin is currently designed to run as a **local development web app**. Follow the steps below to set up and run the project on your PC.
 
-Requirements
+## Requirements
 
-Node.js (LTS) installed
-Download from: https://nodejs.org
+- **Node.js (LTS)** – Download from https://nodejs.org  
+- A command-line terminal (PowerShell, Command Prompt, or VS Code terminal)
 
-A terminal (PowerShell, Command Prompt, or VS Code terminal)
+## Installation & Running
 
-Setup & Run
+Download the RetroSpin repository from GitHub (ZIP download or clone) and extract it into a folder such as `RetroSpin/`.
 
-Download or clone the repository
+Open a terminal inside the folder that contains `package.json`.
 
-Download the ZIP from GitHub or clone the repo, then extract it to a folder:
+Install the required dependencies:
 
-RetroSpin/
+`npm install`
 
+Start the development server:
 
-Open a terminal in the project root
+`npm run dev`
 
-The terminal must be opened in the folder that contains:
+When the server starts, the terminal will output a local address, typically:
 
-package.json
+`http://localhost:5000`
 
+Open this URL in your web browser to use RetroSpin.
 
-Install dependencies
+## Notes
 
-Run:
+- This project uses `cross-env` to allow environment variables to work correctly on Windows.
+- The local server listens on `localhost` instead of `0.0.0.0` to avoid Windows socket permission issues.
+- RetroSpin currently runs in **local development mode only**.
+- Public hosting and Firebase deployment are planned features.
+- Standalone desktop builds (such as `.exe` installers) are not available at this time.
 
-npm install
+## Troubleshooting
 
+If `npm` is not recognized as a command, ensure Node.js is installed correctly and restart your terminal.
 
-Run the development server
+If PowerShell blocks npm scripts (such as the `npm.ps1` error), open PowerShell as Administrator and run:
 
-Start the app with:
+`Set-ExecutionPolicy RemoteSigned -Scope CurrentUser`
 
-npm run dev
+Confirm by typing `Y` when prompted and pressing Enter.
 
-
-Open the app in your browser
-
-When the server starts, it will display a local address such as:
-
-http://localhost:5000
-
-
-Open that URL in your browser to use RetroSpin.
-
-Windows Notes
-
-Windows does not support NODE_ENV=... syntax directly.
-This project uses cross-env to ensure environment variables work correctly across platforms.
-
-The local server is configured to listen on localhost rather than 0.0.0.0 to avoid Windows socket permission issues.
-
-Common Issues
-
-npm is not recognized
-
-Install Node.js (LTS), restart your terminal, then retry:
-
-npm install
-
-
-PowerShell script blocked (npm.ps1 error)
-
-Run PowerShell as Administrator and execute:
-
-Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
-
-
-Type Y when prompted.
-
-App fails to start on Windows with a socket error
-
-Ensure the server is listening on localhost only and not using reusePort or 0.0.0.0.
-(The current configuration is already Windows-safe.)
-
-Current Status
-
-RetroSpin currently runs as a local development build only.
-Firebase integration, hosting deployment, and packaged builds are planned for future releases.
+If the server fails to start due to port or socket errors, confirm the server is configured to listen only on `localhost` and does not use unsupported socket options such as `reusePort`. The current setup is already Windows-compatible.
